@@ -28,11 +28,14 @@ void initializeDeck() {
         deck[i].value = values[i % CARD_VALUES];
         deck[i].suit = suits[i / CARD_VALUES];
         deck[i].numericValue = (i % CARD_VALUES) + 1;
-        if (deck[i].numericValue > 10) deck[i].numericValue = 10;
-        if (i % CARD_VALUES == CARD_VALUES - 1) deck[i].numericValue = 11;
-    }
+        if (deck[i].numericValue > 10) {
+            deck[i].numericValue = 10;
+        } 
+        if (i % CARD_VALUES == CARD_VALUES - 1) {
+            deck[i].numericValue = 11;
+        }
+    }    
 }
-
 void showCard(struct card c) {
     printf("  %s of %s\n", c.value, c.suit);
 }
