@@ -36,6 +36,17 @@ void initializeDeck() {
         }
     }    
 }
+
+void shuffleDeck() {
+    srand(time(NULL));
+    for (int i = TOTAL_CARDS - 1; i > 0; i--) {
+        int j = rand() % (i + 1);
+        struct card temp = deck[i];
+        deck[i] = deck[j];
+        deck[j] = temp;
+    }
+}
+
 void showCard(struct card c) {
     printf("  %s of %s\n", c.value, c.suit);
 }
