@@ -3,7 +3,7 @@
 #include <time.h>
 
 #define TOTAL_CARDS 52
-#define CARD_VALUES 13
+#define CARD_VALUES 12
 #define MAX_HAND 10
 
 // Cards representation
