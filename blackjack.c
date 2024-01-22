@@ -7,7 +7,7 @@
 #define MAX_HAND 10
 
 // Cards representation
-char *values[] = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
+char *values[] = {"2", "3", "4", "5", "6", "7", "8", "9", "10" "J", "Q", "K", "A"};
 char *suits[] = {"Hearts", "Diamonds", "Spades", "Clovers"};
 
 // Structure for a card
@@ -53,11 +53,26 @@ void showCard(struct card c) {
 
 int sumHand(struct card hand[], int numCards) {
     int sum = 0;
+    int numAces = 0;
+
     for (int i = 0; i < numCards; i++) {
         sum += hand[i].numericValue;
+
+        // Contar los As por separado
+        if (hand[i].numericValue == 11) {
+            numAces++;
+        }
     }
+
+    // Ajustar por los As para evitar pasarse
+    while (sum > 21 && numAces > 0) {
+        sum -= 10;  // Tratar el As como 1 en lugar de 11
+        numAces--;
+    }
+
     return sum;
 }
+
 
 int main() {
     initializeDeck();
