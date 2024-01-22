@@ -58,15 +58,13 @@ int sumHand(struct card hand[], int numCards) {
     for (int i = 0; i < numCards; i++) {
         sum += hand[i].numericValue;
 
-        // Contar los As por separado
         if (hand[i].numericValue == 11) {
             numAces++;
         }
     }
 
-    // Ajustar por los As para evitar pasarse
     while (sum > 21 && numAces > 0) {
-        sum -= 10;  // Tratar el As como 1 en lugar de 11
+        sum -= 10;
         numAces--;
     }
 
