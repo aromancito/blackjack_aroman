@@ -7,7 +7,7 @@
 #define MAX_HAND 10
 
 // Cards representation
-char *values[] = {"2", "3", "4", "5", "6", "7", "8", "9", "10" "J", "Q", "K", "A"};
+char *values[] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "J", "Q", "K"};
 char *suits[] = {"Hearts", "Diamonds", "Spades", "Clovers"};
 
 // Structure for a card
